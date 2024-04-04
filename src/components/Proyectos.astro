@@ -1,0 +1,31 @@
+---
+const PROYECTOS = [
+  {
+    title: "Proyecto 1",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, soluta vero quisquam est odio commodi ipsum atque neque quasi autem. At nisi facere recusandae sapiente aut suscipit, a rem nemo!",
+    github: "#",
+    image: "/projects/dopple.webp",
+    tags: ["HMTL", "CSS", "JavaScript"],
+  },
+];
+---
+
+{
+  PROYECTOS.map(({ title, description, tags, image }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200/80 mb-2">{title}</h3>
+      <p class="text-lg text-sky-100/80 mb-4">{description}</p>
+      <ul class="text-lg text-red-100/80 text-pretty mb-4">
+        {tags.map((tag) => (
+          <li>{tag}</li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/30"
+        src={image}
+        alt={`Captura de pantalla del proyecto: ${image}`}
+      />
+    </article>
+  ))
+}
