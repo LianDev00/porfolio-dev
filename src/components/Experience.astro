@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+  {
+    date: 'Agosto 2023 - Diciembre 2023',
+    title:'Tecnico de Desarrollo | Riztie | Lima,Lima',
+    description:'Elaboracion del manual y asistente de la base de datos.',
+    link:"#"
+  },
+  {
+    date: 'Febrero 2023 - Agosto 2023',
+    title:'Desarrollador Web | Universidad Nacional de Ingenieria | Rimac,Lima',
+    description:'Programa de capacitacion en desarrollo web.',
+    link:"#"
+  },
+  {
+    date: 'Julio 2022 - Diciembre 2022',
+    title:'Tecnico de Desarrollo | Hidrosvel Service | SJL,Lima',
+    description:'Implementacion de un Sistema Presupuestario',
+    link:"#"
+  }
+]
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">                  
+  {
+    EXPERIENCE.map(experience =>(
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience}/>
+      </li>
+    ))
+  }
+</ol>
