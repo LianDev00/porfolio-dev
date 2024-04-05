@@ -1,4 +1,20 @@
 ---
+import Html from "./icons/Html.astro";
+import Tailwind from "./icons/Tailwind.astro";
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "bg-[#71564F] text-white",
+    icon: Html,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#495259] text-[#AACFEC]",
+    icon: Tailwind,
+  },
+};
+
 const PROYECTOS = [
   {
     title: "Proyecto 1",
@@ -6,7 +22,7 @@ const PROYECTOS = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, soluta vero quisquam est odio commodi ipsum atque neque quasi autem. At nisi facere recusandae sapiente aut suscipit, a rem nemo!",
     github: "#",
     image: "/projects/dopple.webp",
-    tags: ["HMTL", "CSS", "JavaScript"],
+    tags: [TAGS.HTML,TAGS.TAILWIND],
   },
 ];
 ---
@@ -16,9 +32,14 @@ const PROYECTOS = [
     <article>
       <h3 class="text-2xl font-semibold text-yellow-200/80 mb-2">{title}</h3>
       <p class="text-lg text-sky-100/80 mb-4">{description}</p>
-      <ul class="text-lg text-red-100/80 text-pretty mb-4">
+      <ul class="flex gap-x-2 flex-row">
         {tags.map((tag) => (
-          <li>{tag}</li>
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-2`}>
+              <tag.icon class="size-4"/>
+              {tag.name}
+            </span>
+          </li>
         ))}
       </ul>
       <img
